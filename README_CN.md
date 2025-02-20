@@ -193,7 +193,21 @@ net-tools		极低		缺少时无法正常检测端口占用
 ubus/iproute-doc	极低		缺少时无法正常获取本机host地址
 ```
 
+各个操作系统或软件中使用PAC的方式
+```bash
+ShellClash提供局域网的PAC自动配置方式，可以在各个操作系统上快速完成PROXY配置而无需启用静态路由
+9 -> 6
+PAC配置链接为： http://10.166.191.122:9999/ui/pac 
+PAC的使用教程请参考：https://juewuy.github.io/ehRUeewcv
 
+
+MacOX：
+系统设置 -> 网络 -> 高级 -> 代理 -> 自动代理配置 -> URL中填入PAC地址 -> 好
+
+IOS：
+设置 WiFi 当前WiFi 代理设置 自动 填入PAC地址
+
+```
 
 更新日志：
 --
