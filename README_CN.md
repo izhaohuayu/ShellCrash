@@ -49,17 +49,15 @@
 
 ### 离线安装：<br>
 
-（**如无法连接或出现SSL连接错误，请尝试更换各种不同的安装源！**）<br>
-
-~**标准Linux设备安装：**<br>
+<br>
 
 ```shell
 sudo -i #切换到root用户，如果需要密码，请输入密码
 bash #如已处于bash环境可跳过
 1、点击 Github源 或者 Jsdelivr源 下载本地安装包文件ShellCrash.tar.gz（如果文件名不对或乱码，请自行改名）
+wget https://github.com/izhaohuayu/ShellCrash/raw/dev/bin/ShellCrash.tar.gz
 
 2、将该压缩文件（请勿解压）使用WinSCP或其他SCP客户端上传至设备/tmp目录
-wget https://github.com/izhaohuayu/ShellCrash/raw/dev/bin/ShellCrash.tar.gz
 
 3、
 运行标准Linux系统的设备则使用如下命令进行安装：
@@ -68,10 +66,31 @@ mkdir -p /tmp/SC_tmp && tar -zxf '/tmp/ShellCrash.tar.gz' -C /tmp/SC_tmp/ && bas
 运行OpenWrt或其他非标准Linux系统的设备（主要是各类路由器），请使用如下命令安装：
 mkdir -p /tmp/SC_tmp && tar -zxf '/tmp/ShellCrash.tar.gz' -C /tmp/SC_tmp/ && source /tmp/SC_tmp/init.sh 
 
-4、拷贝配置文件和内核到目录
+如果你使用的命令安装出错，那么请从第2步开始重新安装，并尝试使用另一个安装命令
+
+4、参考↓↓↓通过WinSCP或其他SCP客户端手动上传内核单独安装/升级内核↓↓↓安装所需的内核文件
+或者 拷贝包里的配置文件和内核到目录
 cp /etc/ShellCrash/clash.yaml  /tmp/
 cp /etc/ShellCrash/CrashCore.tar.gz  /tmp/ShellCrash/
 
+5、运行ShellCrash脚本，如有需要，请使用8-2功能进入新手引导
+```
+
+通过WinSCP或其他SCP客户端手动上传内核单独安装/升级内核：
+
+```bash
+1、参考↑↑↑识别内核及安装版本↑↑↑识别内核并下载对应内核文件：
+ Meta内核：https://github.com/juewuy/ShellCrash/tree/dev/bin/meta
+ 
+ Sing-Box内核：https://github.com/juewuy/ShellCrash/tree/dev/bin/singbox
+
+2、需要标准二进制文件，第三方地址请自行解压，通常无须改名
+
+3、之后将该二进制文件使用WinSCP或其他SCP客户端上传至/tmp目录
+
+4、之后在SSH中直接运行crash命令
+crash 
+5、参考提示完成加载
 ```
 
 ### 在线安装：<br>
