@@ -47,6 +47,27 @@
 
 ~之后在SSH界面执行目标设备对应的安装命令，并按照后续提示完成安装<br>
 
+### 离线安装：<br>
+
+（**如无法连接或出现SSL连接错误，请尝试更换各种不同的安装源！**）<br>
+
+~**标准Linux设备安装：**<br>
+
+```shell
+sudo -i #切换到root用户，如果需要密码，请输入密码
+bash #如已处于bash环境可跳过
+1、点击 Github源 或者 Jsdelivr源 下载本地安装包文件ShellCrash.tar.gz（如果文件名不对或乱码，请自行改名）
+
+2、将该压缩文件（请勿解压）使用WinSCP或其他SCP客户端上传至设备/tmp目录
+wget https://github.com/izhaohuayu/ShellCrash/raw/dev/bin/ShellCrash.tar.gz
+
+运行OpenWrt或其他非标准Linux系统的设备（主要是各类路由器），请使用如下命令安装：
+mkdir -p /tmp/SC_tmp && tar -zxf '/tmp/ShellCrash.tar.gz' -C /tmp/SC_tmp/ && source /tmp/SC_tmp/init.sh 
+
+运行标准Linux系统的设备则使用如下命令进行安装：
+mkdir -p /tmp/SC_tmp && tar -zxf '/tmp/ShellCrash.tar.gz' -C /tmp/SC_tmp/ && bash /tmp/SC_tmp/init.sh && source /etc/profile >/dev/null
+```
+
 ### 在线安装：<br>
 
 （**如无法连接或出现SSL连接错误，请尝试更换各种不同的安装源！**）<br>
