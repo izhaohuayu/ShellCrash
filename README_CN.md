@@ -59,7 +59,8 @@ wget https://github.com/izhaohuayu/ShellCrash/raw/dev/bin/ShellCrash.tar.gz
 
 2、将该压缩文件（请勿解压）使用WinSCP或其他SCP客户端上传至设备/tmp目录
 
-3、运行标准Linux系统的设备则使用如下命令进行安装：
+3、安装：
+运行标准Linux系统的设备则使用如下命令进行安装：
 mkdir -p /tmp/SC_tmp && tar -zxf '/tmp/ShellCrash.tar.gz' -C /tmp/SC_tmp/ && bash /tmp/SC_tmp/init.sh && source /etc/profile >/dev/null
 
 运行OpenWrt或其他非标准Linux系统的设备（主要是各类路由器），请使用如下命令安装：
